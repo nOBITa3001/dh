@@ -287,6 +287,7 @@
     <Content Include="images\forward_enabled_hover.png" />
     <Content Include="images\icons.png" />
     <Content Include="images\img.jpg" />
+    <Content Include="images\img2.jpg" />
     <Content Include="images\mastercard.png" />
     <Content Include="images\paypal2.png" />
     <Content Include="images\picture-2.jpg" />
@@ -297,6 +298,7 @@
     <Content Include="images\prod3.jpg" />
     <Content Include="images\prod4.jpg" />
     <Content Include="images\prod5.jpg" />
+    <Content Include="images\minion.png" />
     <Content Include="images\sort_asc.png" />
     <Content Include="images\sort_asc_disabled.png" />
     <Content Include="images\sort_both.png" />
