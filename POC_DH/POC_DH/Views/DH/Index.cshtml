@@ -248,6 +248,94 @@
 </div>
 
 <div class="row">
+	<div class="col-md-12">
+		<div class="x_panel">
+			<div class="x_title">
+				<h2>Activity Summary</h2>
+				<div class="clearfix"></div>
+			</div>
+			<div class="x_content">
+				<div class="col-md-9 col-sm-12 col-xs-12">
+					<canvas id="canvas_line"></canvas>
+				</div>
+
+				<div class="col-md-3 col-sm-12 col-xs-12">
+					<div>
+						<div class="x_title">
+							<h2>Top Profiles</h2>
+							<div class="clearfix"></div>
+						</div>
+						<ul class="list-unstyled top_profiles scroll-view">
+							<li class="media event">
+								<a class="pull-left border-aero profile_thumb">
+									<i class="fa fa-user aero"></i>
+								</a>
+								<div class="media-body">
+									<a class="title" href="#">Ms. Mary Jane</a>
+									<p><strong>$2300. </strong> Agent Avarage Sales </p>
+									<p>
+										<small>12 Sales Today</small>
+									</p>
+								</div>
+							</li>
+							<li class="media event">
+								<a class="pull-left border-green profile_thumb">
+									<i class="fa fa-user green"></i>
+								</a>
+								<div class="media-body">
+									<a class="title" href="#">Ms. Mary Jane</a>
+									<p><strong>$2300. </strong> Agent Avarage Sales </p>
+									<p>
+										<small>12 Sales Today</small>
+									</p>
+								</div>
+							</li>
+							<li class="media event">
+								<a class="pull-left border-blue profile_thumb">
+									<i class="fa fa-user blue"></i>
+								</a>
+								<div class="media-body">
+									<a class="title" href="#">Ms. Mary Jane</a>
+									<p><strong>$2300. </strong> Agent Avarage Sales </p>
+									<p>
+										<small>12 Sales Today</small>
+									</p>
+								</div>
+							</li>
+							<li class="media event">
+								<a class="pull-left border-aero profile_thumb">
+									<i class="fa fa-user aero"></i>
+								</a>
+								<div class="media-body">
+									<a class="title" href="#">Ms. Mary Jane</a>
+									<p><strong>$2300. </strong> Agent Avarage Sales </p>
+									<p>
+										<small>12 Sales Today</small>
+									</p>
+								</div>
+							</li>
+							<li class="media event">
+								<a class="pull-left border-green profile_thumb">
+									<i class="fa fa-user green"></i>
+								</a>
+								<div class="media-body">
+									<a class="title" href="#">Ms. Mary Jane</a>
+									<p><strong>$2300. </strong> Agent Avarage Sales </p>
+									<p>
+										<small>12 Sales Today</small>
+									</p>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="row">
 	<div class="col-md-4 col-sm-4 col-xs-12">
 		<div class="x_panel">
 			<div class="x_title">
@@ -555,3 +643,353 @@
 	</div>
 	<!-- end of weather widget -->
 </div>
+
+@section scripts
+{
+	<!-- Line graph -->
+	<script type="text/javascript">
+		var randomScalingFactor = function () {
+			return Math.round(Math.random() * 100)
+		};
+
+		var randomColour = function () {
+			var letters = '0123456789ABCDEF';
+			var colour = '#';
+			for (var i = 0; i < 6; i++) {
+				colour += letters[Math.floor(Math.random() * 16)];
+			}
+
+			//var letters = '789ABCD';
+			//var colour = '#';
+			//for (var i = 0; i < 6; i++) {
+			//	colour += letters[Math.round(Math.random() * 6)];
+			//}
+			return colour;
+		}
+
+		var transparentColour = "rgba(255, 255, 255, .4)";
+		var whiteColour = "#fff";
+		var pointHighlightStrokeColour = "rgba(220,220,220,1)"
+
+		var lineChartData2 = {
+			labels: ["Week 1", "Week 2", "Week 3", "Week 4", "Week 5", "Week 6", "Week 7", "Week 8"],
+			datasets: [
+                {
+                	label: "Feifei",
+                	fillColor: transparentColour,
+                	//strokeColor: "rgba(38, 185, 154, 0.7)",
+                	//pointColor: "rgba(38, 185, 154, 0.7)",
+                	strokeColor: randomColour(),
+                	pointColor: randomColour(),
+                	pointStrokeColor: whiteColour,
+                	pointHighlightFill: whiteColour,
+                	pointHighlightStroke: pointHighlightStrokeColour,
+                	data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()]
+                }
+				, {
+                	label: "kookui",
+                	fillColor: transparentColour,
+                	strokeColor: randomColour(),
+                	pointColor: randomColour(),
+                	pointStrokeColor: whiteColour,
+                	pointHighlightFill: whiteColour,
+                	pointHighlightStroke: pointHighlightStrokeColour,
+                	data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()]
+				}
+				, {
+					label: "Best",
+					fillColor: transparentColour,
+					strokeColor: randomColour(),
+					pointColor: randomColour(),
+					pointStrokeColor: whiteColour,
+					pointHighlightFill: whiteColour,
+					pointHighlightStroke: pointHighlightStrokeColour,
+					data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()]
+				}
+				, {
+					label: "Bank",
+					fillColor: transparentColour,
+					strokeColor: randomColour(),
+					pointColor: randomColour(),
+					pointStrokeColor: whiteColour,
+					pointHighlightFill: whiteColour,
+					pointHighlightStroke: pointHighlightStrokeColour,
+					data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()]
+				}
+				, {
+					label: "Tongta",
+					fillColor: transparentColour,
+					strokeColor: randomColour(),
+					pointColor: randomColour(),
+					pointStrokeColor: whiteColour,
+					pointHighlightFill: whiteColour,
+					pointHighlightStroke: pointHighlightStrokeColour,
+					data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()]
+				}
+				, {
+					label: "Pratt",
+					fillColor: transparentColour,
+					strokeColor: randomColour(),
+					pointColor: randomColour(),
+					pointStrokeColor: whiteColour,
+					pointHighlightFill: whiteColour,
+					pointHighlightStroke: pointHighlightStrokeColour,
+					data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()]
+				}
+				, {
+					label: "Arun",
+					fillColor: transparentColour,
+					strokeColor: randomColour(),
+					pointColor: randomColour(),
+					pointStrokeColor: whiteColour,
+					pointHighlightFill: whiteColour,
+					pointHighlightStroke: pointHighlightStrokeColour,
+					data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()]
+				}
+				, {
+					label: "Tik",
+					fillColor: transparentColour,
+					strokeColor: randomColour(),
+					pointColor: randomColour(),
+					pointStrokeColor: whiteColour,
+					pointHighlightFill: whiteColour,
+					pointHighlightStroke: pointHighlightStrokeColour,
+					data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()]
+				}
+				, {
+					label: "Bow",
+					fillColor: transparentColour,
+					strokeColor: randomColour(),
+					pointColor: randomColour(),
+					pointStrokeColor: whiteColour,
+					pointHighlightFill: whiteColour,
+					pointHighlightStroke: pointHighlightStrokeColour,
+					data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()]
+				}
+				, {
+					label: "Sine",
+					fillColor: transparentColour,
+					strokeColor: randomColour(),
+					pointColor: randomColour(),
+					pointStrokeColor: whiteColour,
+					pointHighlightFill: whiteColour,
+					pointHighlightStroke: pointHighlightStrokeColour,
+					data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()]
+				}
+				, {
+					label: "Lin",
+					fillColor: transparentColour,
+					strokeColor: randomColour(),
+					pointColor: randomColour(),
+					pointStrokeColor: whiteColour,
+					pointHighlightFill: whiteColour,
+					pointHighlightStroke: pointHighlightStrokeColour,
+					data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()]
+				}
+				, {
+					label: "Oat",
+					fillColor: transparentColour,
+					strokeColor: randomColour(),
+					pointColor: randomColour(),
+					pointStrokeColor: whiteColour,
+					pointHighlightFill: whiteColour,
+					pointHighlightStroke: pointHighlightStrokeColour,
+					data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()]
+				}
+				, {
+					label: "Nae",
+					fillColor: transparentColour,
+					strokeColor: randomColour(),
+					pointColor: randomColour(),
+					pointStrokeColor: whiteColour,
+					pointHighlightFill: whiteColour,
+					pointHighlightStroke: pointHighlightStrokeColour,
+					data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()]
+				}
+				, {
+					label: "Fern",
+					fillColor: transparentColour,
+					strokeColor: randomColour(),
+					pointColor: randomColour(),
+					pointStrokeColor: whiteColour,
+					pointHighlightFill: whiteColour,
+					pointHighlightStroke: pointHighlightStrokeColour,
+					data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()]
+				}
+				, {
+					label: "Nitin",
+					fillColor: transparentColour,
+					strokeColor: randomColour(),
+					pointColor: randomColour(),
+					pointStrokeColor: whiteColour,
+					pointHighlightFill: whiteColour,
+					pointHighlightStroke: pointHighlightStrokeColour,
+					data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()]
+				}
+			]
+
+		}
+
+		$(document).ready(function () {
+			new Chart(document.getElementById("canvas000").getContext("2d")).Line(lineChartData2, {
+				responsive: true,
+				tooltipFillColor: "rgba(51, 51, 51, 0.55)",
+				multiTooltipTemplate: "<%= datasetLabel %> - <%= value %>"
+			});
+		});
+	</script>
+
+	<!-- Bar graph -->
+	<script type="text/javascript">
+		var randomScalingFactor = function () {
+			return Math.round(Math.random() * 100)
+		};
+		var randomColour = function () {
+			//var letters = '0123456789ABCDEF';
+			//var colour = '#';
+			//for (var i = 0; i < 6; i++) {
+			//	colour += letters[Math.floor(Math.random() * 16)];
+			//}
+
+			var letters = '789ABCD';
+			var colour = '#';
+			for (var i = 0; i < 6; i++) {
+				colour += letters[Math.round(Math.random() * 6)];
+			}
+			return colour;
+		}
+
+		var barChartData = {
+			labels: ["Activities"],
+			datasets: [
+                {
+                	label: "Feifei",
+                	fillColor: randomColour(),
+                	strokeColor: randomColour(),
+                	data: [@Model.Competitors[0].Activities]
+                }
+				, {
+					label: "kookui",
+					fillColor: randomColour(),
+					strokeColor: randomColour(),
+					data: [@Model.Competitors[1].Activities]
+				}
+				, {
+					label: "Best",
+					fillColor: randomColour(),
+					strokeColor: randomColour(),
+					data: [@Model.Competitors[2].Activities]
+				}
+				, {
+					label: "Bank",
+					fillColor: randomColour(),
+					strokeColor: randomColour(),
+					data: [@Model.Competitors[3].Activities]
+				}
+				, {
+					label: "Tongta",
+					fillColor: randomColour(),
+					strokeColor: randomColour(),
+					data: [@Model.Competitors[4].Activities]
+				}
+				, {
+					label: "Pratt",
+					fillColor: randomColour(),
+					strokeColor: randomColour(),
+					data: [@Model.Competitors[5].Activities]
+				}
+				, {
+					label: "Arun",
+					fillColor: randomColour(),
+					strokeColor: randomColour(),
+					data: [@Model.Competitors[6].Activities]
+				}
+				, {
+					label: "Tik",
+					fillColor: randomColour(),
+					strokeColor: randomColour(),
+					data: [@Model.Competitors[7].Activities]
+				}
+				, {
+					label: "Bow",
+					fillColor: randomColour(),
+					strokeColor: randomColour(),
+					data: [@Model.Competitors[8].Activities]
+				}
+				, {
+					label: "Sine",
+					fillColor: randomColour(),
+					strokeColor: randomColour(),
+					data: [@Model.Competitors[9].Activities]
+				}
+				, {
+					label: "Lin",
+					fillColor: randomColour(),
+					strokeColor: randomColour(),
+					data: [@Model.Competitors[10].Activities]
+				}
+				, {
+					label: "Oat",
+					fillColor: randomColour(),
+					strokeColor: randomColour(),
+					data: [@Model.Competitors[11].Activities]
+				}
+				, {
+					label: "Nae",
+					fillColor: randomColour(),
+					strokeColor: randomColour(),
+					data: [@Model.Competitors[12].Activities]
+				}
+				, {
+					label: "Fern",
+					fillColor: randomColour(),
+					strokeColor: randomColour(),
+					data: [@Model.Competitors[13].Activities]
+				}
+				, {
+					label: "Nitin",
+					fillColor: randomColour(),
+					strokeColor: randomColour(),
+					data: [@Model.Competitors[14].Activities]
+				}
+			],
+		}
+
+		$(document).ready(function () {
+			new Chart($("#canvas_bar").get(0).getContext("2d")).Bar(barChartData, {
+				tooltipFillColor: "rgba(51, 51, 51, 0.55)",
+				responsive: true,
+				barDatasetSpacing: 6,
+				barValueSpacing: 5,
+				multiTooltipTemplate: "<%= datasetLabel %> - <%= value %>"
+			});
+		});
+	</script>
+
+	<!-- Tally -->
+	<script>
+		var lineChartData9 = {
+			labels: @Html.Raw(Json.Encode(@Model.Competitors.Select(x => x.Name))),
+			datasets: [
+                {
+                	label: "My First dataset",
+                	fillColor: "rgba(38, 185, 154, 0.11)", //rgba(220,220,220,0.2)
+                	strokeColor: "rgba(38, 185, 154, 0.7)", //rgba(220,220,220,1)
+                	pointColor: "rgba(38, 185, 154, 0.7)", //rgba(220,220,220,1)
+                	pointStrokeColor: "#fff",
+                	pointHighlightFill: "#fff",
+                	pointHighlightStroke: "rgba(220,220,220,1)",
+                	data: @Html.Raw(Json.Encode(@Model.Competitors.Select(x => x.Activities)))
+                }
+			]
+
+		}
+		$(document).ready(function () {
+			new Chart(document.getElementById("canvas_line").getContext("2d")).Line(lineChartData9, {
+				responsive: true,
+				scaleShowLabels: false,
+				tooltipFillColor: "rgba(51, 51, 51, 0.55)"
+			});
+		});
+	</script>
+}
