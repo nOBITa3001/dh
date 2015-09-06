@@ -1,4 +1,4 @@
-﻿
+﻿@model POC_DH.ViewModels.DashboardViewModel
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout2.cshtml";
@@ -10,7 +10,7 @@
 			<div class="icon">
 				<i class="fa fa-users"></i>
 			</div>
-			<div class="count">15</div>
+			<div class="count">@Model.Registers</div>
 
 			<h3>Registers</h3>
 			<p>league 2015</p>
@@ -21,10 +21,10 @@
 			<div class="icon">
 				<i class="fa fa-play-circle-o"></i>
 			</div>
-			<div class="count">105</div>
+			<div class="count">@Model.Activities</div>
 
 			<h3>Activities</h3>
-			<p>7 days</p>
+			<p>@Model.DaysProgress days</p>
 		</div>
 	</div>
 	<div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
@@ -32,10 +32,10 @@
 			<div class="icon">
 				<i class="fa fa-calendar"></i>
 			</div>
-			<div class="count">53</div>
+			<div class="count">@Model.DaysLeft</div>
 
 			<h3>Days left</h3>
-			<p>league 2015</p>
+			<p>01/09/2015 - 31/10/2015</p>
 		</div>
 	</div>
 	<div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
@@ -43,10 +43,26 @@
 			<div class="icon">
 				<i class="fa fa-trophy"></i>
 			</div>
-			<div class="count">Lin</div>
+
+			@if (@Model.FirstRanking != null)
+			{
+				<div class="count">@Model.FirstRanking.Name</div>
+			}
+			else
+			{
+				<div class="count">-</div>
+			}
 
 			<h3>1 st</h3>
-			<p>9 activities</p>
+
+			@if (@Model.FirstRanking != null)
+			{
+				<p>@Model.FirstRanking.Activities activities</p>
+			}
+			else
+			{
+				<p>- activities</p>
+			}
 		</div>
 	</div>
 </div>
