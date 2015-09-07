@@ -648,195 +648,348 @@
 {
 	<!-- Line graph -->
 	<script type="text/javascript">
-		var randomScalingFactor = function () {
-			return Math.round(Math.random() * 100)
-		};
+	var randomScalingFactor = function () {
+		return Math.round(Math.random() * 100)
+	};
 
-		var randomColour = function () {
-			var letters = '0123456789ABCDEF';
-			var colour = '#';
-			for (var i = 0; i < 6; i++) {
-				colour += letters[Math.floor(Math.random() * 16)];
-			}
+	var randomColour = function () {
+		var letters = '0123456789ABCDEF';
+		var colour = '#';
+		for (var i = 0; i < 6; i++) {
+			colour += letters[Math.floor(Math.random() * 16)];
+		}
 
-			//var letters = '789ABCD';
-			//var colour = '#';
-			//for (var i = 0; i < 6; i++) {
-			//	colour += letters[Math.round(Math.random() * 6)];
+		//var letters = '789ABCD';
+		//var colour = '#';
+		//for (var i = 0; i < 6; i++) {
+		//	colour += letters[Math.round(Math.random() * 6)];
+		//}
+		return colour;
+	}
+
+	var transparentColour = "rgba(255, 255, 255, 0)";
+	var whiteColour = "#fff";
+	var pointHighlightStrokeColour = "rgba(220,220,220,1)"
+
+	var lineChartData2 = {
+		//labels: ["Week 1", "Week 2", "Week 3", "Week 4", "Week 5", "Week 6", "Week 7", "Week 8"],
+		labels: @Html.Raw(Json.Encode(@Model.Weeks)),
+		datasets: [
+			{
+				label: "Feifei",
+				fillColor: transparentColour,
+				//strokeColor: "rgba(38, 185, 154, 0.7)",
+				//pointColor: "rgba(38, 185, 154, 0.7)",
+				strokeColor: randomColour(),
+				pointColor: randomColour(),
+				pointStrokeColor: transparentColour,
+				pointHighlightFill: transparentColour,
+				pointHighlightStroke: pointHighlightStrokeColour,
+				data: @Html.Raw(Json.Encode(@Model.Competitors[0].WeekActivities))
+				}
+			, {
+				label: "kookui",
+				fillColor: transparentColour,
+				strokeColor: randomColour(),
+				pointColor: randomColour(),
+				pointStrokeColor: transparentColour,
+				pointHighlightFill: transparentColour,
+				pointHighlightStroke: pointHighlightStrokeColour,
+				data: @Html.Raw(Json.Encode(@Model.Competitors[1].WeekActivities))
+				}
+			, {
+				label: "Best",
+				fillColor: transparentColour,
+				strokeColor: randomColour(),
+				pointColor: randomColour(),
+				pointStrokeColor: transparentColour,
+				pointHighlightFill: transparentColour,
+				pointHighlightStroke: pointHighlightStrokeColour,
+				data: @Html.Raw(Json.Encode(@Model.Competitors[2].WeekActivities))
+				}
+			, {
+				label: "Bank",
+				fillColor: transparentColour,
+				strokeColor: randomColour(),
+				pointColor: randomColour(),
+				pointStrokeColor: whiteColour,
+				pointHighlightFill: whiteColour,
+				pointHighlightStroke: pointHighlightStrokeColour,
+				data: @Html.Raw(Json.Encode(@Model.Competitors[3].WeekActivities))
+				}
+			, {
+				label: "Tongta",
+				fillColor: transparentColour,
+				strokeColor: randomColour(),
+				pointColor: randomColour(),
+				pointStrokeColor: whiteColour,
+				pointHighlightFill: whiteColour,
+				pointHighlightStroke: pointHighlightStrokeColour,
+				data: @Html.Raw(Json.Encode(@Model.Competitors[4].WeekActivities))
+				}
+			, {
+				label: "Pratt",
+				fillColor: transparentColour,
+				strokeColor: randomColour(),
+				pointColor: randomColour(),
+				pointStrokeColor: whiteColour,
+				pointHighlightFill: whiteColour,
+				pointHighlightStroke: pointHighlightStrokeColour,
+				data: @Html.Raw(Json.Encode(@Model.Competitors[5].WeekActivities))
+				}
+			, {
+				label: "Arun",
+				fillColor: transparentColour,
+				strokeColor: randomColour(),
+				pointColor: randomColour(),
+				pointStrokeColor: whiteColour,
+				pointHighlightFill: whiteColour,
+				pointHighlightStroke: pointHighlightStrokeColour,
+				data: @Html.Raw(Json.Encode(@Model.Competitors[6].WeekActivities))
+				}
+			, {
+				label: "Tik",
+				fillColor: transparentColour,
+				strokeColor: randomColour(),
+				pointColor: randomColour(),
+				pointStrokeColor: whiteColour,
+				pointHighlightFill: whiteColour,
+				pointHighlightStroke: pointHighlightStrokeColour,
+				data: @Html.Raw(Json.Encode(@Model.Competitors[7].WeekActivities))
+				}
+			, {
+				label: "Bow",
+				fillColor: transparentColour,
+				strokeColor: randomColour(),
+				pointColor: randomColour(),
+				pointStrokeColor: whiteColour,
+				pointHighlightFill: whiteColour,
+				pointHighlightStroke: pointHighlightStrokeColour,
+				data: @Html.Raw(Json.Encode(@Model.Competitors[8].WeekActivities))
+				}
+			, {
+				label: "Sine",
+				fillColor: transparentColour,
+				strokeColor: randomColour(),
+				pointColor: randomColour(),
+				pointStrokeColor: whiteColour,
+				pointHighlightFill: whiteColour,
+				pointHighlightStroke: pointHighlightStrokeColour,
+				data: @Html.Raw(Json.Encode(@Model.Competitors[9].WeekActivities))
+				}
+			, {
+				label: "Lin",
+				fillColor: transparentColour,
+				strokeColor: randomColour(),
+				pointColor: randomColour(),
+				pointStrokeColor: whiteColour,
+				pointHighlightFill: whiteColour,
+				pointHighlightStroke: pointHighlightStrokeColour,
+				data: @Html.Raw(Json.Encode(@Model.Competitors[10].WeekActivities))
+				}
+			, {
+				label: "Oat",
+				fillColor: transparentColour,
+				strokeColor: randomColour(),
+				pointColor: randomColour(),
+				pointStrokeColor: whiteColour,
+				pointHighlightFill: whiteColour,
+				pointHighlightStroke: pointHighlightStrokeColour,
+				data: @Html.Raw(Json.Encode(@Model.Competitors[11].WeekActivities))
+				}
+			, {
+				label: "Nae",
+				fillColor: transparentColour,
+				strokeColor: randomColour(),
+				pointColor: randomColour(),
+				pointStrokeColor: whiteColour,
+				pointHighlightFill: whiteColour,
+				pointHighlightStroke: pointHighlightStrokeColour,
+				data: @Html.Raw(Json.Encode(@Model.Competitors[12].WeekActivities))
+				}
+			, {
+				label: "Fern",
+				fillColor: transparentColour,
+				strokeColor: randomColour(),
+				pointColor: randomColour(),
+				pointStrokeColor: whiteColour,
+				pointHighlightFill: whiteColour,
+				pointHighlightStroke: pointHighlightStrokeColour,
+				data: @Html.Raw(Json.Encode(@Model.Competitors[13].WeekActivities))
+				}
+			, {
+				label: "Nitin",
+				fillColor: transparentColour,
+				strokeColor: randomColour(),
+				pointColor: randomColour(),
+				pointStrokeColor: whiteColour,
+				pointHighlightFill: whiteColour,
+				pointHighlightStroke: pointHighlightStrokeColour,
+				data: @Html.Raw(Json.Encode(@Model.Competitors[14].WeekActivities))
+				}
+			//{
+			//	label: "Feifei",
+			//	fillColor: transparentColour,
+			//	//strokeColor: "rgba(38, 185, 154, 0.7)",
+			//	//pointColor: "rgba(38, 185, 154, 0.7)",
+			//	strokeColor: randomColour(),
+			//	pointColor: randomColour(),
+			//	pointStrokeColor: whiteColour,
+			//	pointHighlightFill: whiteColour,
+			//	pointHighlightStroke: pointHighlightStrokeColour,
+			//	data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()]
 			//}
-			return colour;
-		}
+			//, {
+			//	label: "kookui",
+			//	fillColor: transparentColour,
+			//	strokeColor: randomColour(),
+			//	pointColor: randomColour(),
+			//	pointStrokeColor: whiteColour,
+			//	pointHighlightFill: whiteColour,
+			//	pointHighlightStroke: pointHighlightStrokeColour,
+			//	data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()]
+			//}
+			//, {
+			//	label: "Best",
+			//	fillColor: transparentColour,
+			//	strokeColor: randomColour(),
+			//	pointColor: randomColour(),
+			//	pointStrokeColor: whiteColour,
+			//	pointHighlightFill: whiteColour,
+			//	pointHighlightStroke: pointHighlightStrokeColour,
+			//	data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()]
+			//}
+			//, {
+			//	label: "Bank",
+			//	fillColor: transparentColour,
+			//	strokeColor: randomColour(),
+			//	pointColor: randomColour(),
+			//	pointStrokeColor: whiteColour,
+			//	pointHighlightFill: whiteColour,
+			//	pointHighlightStroke: pointHighlightStrokeColour,
+			//	data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()]
+			//}
+			//, {
+			//	label: "Tongta",
+			//	fillColor: transparentColour,
+			//	strokeColor: randomColour(),
+			//	pointColor: randomColour(),
+			//	pointStrokeColor: whiteColour,
+			//	pointHighlightFill: whiteColour,
+			//	pointHighlightStroke: pointHighlightStrokeColour,
+			//	data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()]
+			//}
+			//, {
+			//	label: "Pratt",
+			//	fillColor: transparentColour,
+			//	strokeColor: randomColour(),
+			//	pointColor: randomColour(),
+			//	pointStrokeColor: whiteColour,
+			//	pointHighlightFill: whiteColour,
+			//	pointHighlightStroke: pointHighlightStrokeColour,
+			//	data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()]
+			//}
+			//, {
+			//	label: "Arun",
+			//	fillColor: transparentColour,
+			//	strokeColor: randomColour(),
+			//	pointColor: randomColour(),
+			//	pointStrokeColor: whiteColour,
+			//	pointHighlightFill: whiteColour,
+			//	pointHighlightStroke: pointHighlightStrokeColour,
+			//	data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()]
+			//}
+			//, {
+			//	label: "Tik",
+			//	fillColor: transparentColour,
+			//	strokeColor: randomColour(),
+			//	pointColor: randomColour(),
+			//	pointStrokeColor: whiteColour,
+			//	pointHighlightFill: whiteColour,
+			//	pointHighlightStroke: pointHighlightStrokeColour,
+			//	data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()]
+			//}
+			//, {
+			//	label: "Bow",
+			//	fillColor: transparentColour,
+			//	strokeColor: randomColour(),
+			//	pointColor: randomColour(),
+			//	pointStrokeColor: whiteColour,
+			//	pointHighlightFill: whiteColour,
+			//	pointHighlightStroke: pointHighlightStrokeColour,
+			//	data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()]
+			//}
+			//, {
+			//	label: "Sine",
+			//	fillColor: transparentColour,
+			//	strokeColor: randomColour(),
+			//	pointColor: randomColour(),
+			//	pointStrokeColor: whiteColour,
+			//	pointHighlightFill: whiteColour,
+			//	pointHighlightStroke: pointHighlightStrokeColour,
+			//	data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()]
+			//}
+			//, {
+			//	label: "Lin",
+			//	fillColor: transparentColour,
+			//	strokeColor: randomColour(),
+			//	pointColor: randomColour(),
+			//	pointStrokeColor: whiteColour,
+			//	pointHighlightFill: whiteColour,
+			//	pointHighlightStroke: pointHighlightStrokeColour,
+			//	data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()]
+			//}
+			//, {
+			//	label: "Oat",
+			//	fillColor: transparentColour,
+			//	strokeColor: randomColour(),
+			//	pointColor: randomColour(),
+			//	pointStrokeColor: whiteColour,
+			//	pointHighlightFill: whiteColour,
+			//	pointHighlightStroke: pointHighlightStrokeColour,
+			//	data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()]
+			//}
+			//, {
+			//	label: "Nae",
+			//	fillColor: transparentColour,
+			//	strokeColor: randomColour(),
+			//	pointColor: randomColour(),
+			//	pointStrokeColor: whiteColour,
+			//	pointHighlightFill: whiteColour,
+			//	pointHighlightStroke: pointHighlightStrokeColour,
+			//	data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()]
+			//}
+			//, {
+			//	label: "Fern",
+			//	fillColor: transparentColour,
+			//	strokeColor: randomColour(),
+			//	pointColor: randomColour(),
+			//	pointStrokeColor: whiteColour,
+			//	pointHighlightFill: whiteColour,
+			//	pointHighlightStroke: pointHighlightStrokeColour,
+			//	data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()]
+			//}
+			//, {
+			//	label: "Nitin",
+			//	fillColor: transparentColour,
+			//	strokeColor: randomColour(),
+			//	pointColor: randomColour(),
+			//	pointStrokeColor: whiteColour,
+			//	pointHighlightFill: whiteColour,
+			//	pointHighlightStroke: pointHighlightStrokeColour,
+			//	data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()]
+			//}
+		]
 
-		var transparentColour = "rgba(255, 255, 255, .4)";
-		var whiteColour = "#fff";
-		var pointHighlightStrokeColour = "rgba(220,220,220,1)"
+	}
 
-		var lineChartData2 = {
-			labels: ["Week 1", "Week 2", "Week 3", "Week 4", "Week 5", "Week 6", "Week 7", "Week 8"],
-			datasets: [
-                {
-                	label: "Feifei",
-                	fillColor: transparentColour,
-                	//strokeColor: "rgba(38, 185, 154, 0.7)",
-                	//pointColor: "rgba(38, 185, 154, 0.7)",
-                	strokeColor: randomColour(),
-                	pointColor: randomColour(),
-                	pointStrokeColor: whiteColour,
-                	pointHighlightFill: whiteColour,
-                	pointHighlightStroke: pointHighlightStrokeColour,
-                	data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()]
-                }
-				, {
-                	label: "kookui",
-                	fillColor: transparentColour,
-                	strokeColor: randomColour(),
-                	pointColor: randomColour(),
-                	pointStrokeColor: whiteColour,
-                	pointHighlightFill: whiteColour,
-                	pointHighlightStroke: pointHighlightStrokeColour,
-                	data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()]
-				}
-				, {
-					label: "Best",
-					fillColor: transparentColour,
-					strokeColor: randomColour(),
-					pointColor: randomColour(),
-					pointStrokeColor: whiteColour,
-					pointHighlightFill: whiteColour,
-					pointHighlightStroke: pointHighlightStrokeColour,
-					data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()]
-				}
-				, {
-					label: "Bank",
-					fillColor: transparentColour,
-					strokeColor: randomColour(),
-					pointColor: randomColour(),
-					pointStrokeColor: whiteColour,
-					pointHighlightFill: whiteColour,
-					pointHighlightStroke: pointHighlightStrokeColour,
-					data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()]
-				}
-				, {
-					label: "Tongta",
-					fillColor: transparentColour,
-					strokeColor: randomColour(),
-					pointColor: randomColour(),
-					pointStrokeColor: whiteColour,
-					pointHighlightFill: whiteColour,
-					pointHighlightStroke: pointHighlightStrokeColour,
-					data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()]
-				}
-				, {
-					label: "Pratt",
-					fillColor: transparentColour,
-					strokeColor: randomColour(),
-					pointColor: randomColour(),
-					pointStrokeColor: whiteColour,
-					pointHighlightFill: whiteColour,
-					pointHighlightStroke: pointHighlightStrokeColour,
-					data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()]
-				}
-				, {
-					label: "Arun",
-					fillColor: transparentColour,
-					strokeColor: randomColour(),
-					pointColor: randomColour(),
-					pointStrokeColor: whiteColour,
-					pointHighlightFill: whiteColour,
-					pointHighlightStroke: pointHighlightStrokeColour,
-					data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()]
-				}
-				, {
-					label: "Tik",
-					fillColor: transparentColour,
-					strokeColor: randomColour(),
-					pointColor: randomColour(),
-					pointStrokeColor: whiteColour,
-					pointHighlightFill: whiteColour,
-					pointHighlightStroke: pointHighlightStrokeColour,
-					data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()]
-				}
-				, {
-					label: "Bow",
-					fillColor: transparentColour,
-					strokeColor: randomColour(),
-					pointColor: randomColour(),
-					pointStrokeColor: whiteColour,
-					pointHighlightFill: whiteColour,
-					pointHighlightStroke: pointHighlightStrokeColour,
-					data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()]
-				}
-				, {
-					label: "Sine",
-					fillColor: transparentColour,
-					strokeColor: randomColour(),
-					pointColor: randomColour(),
-					pointStrokeColor: whiteColour,
-					pointHighlightFill: whiteColour,
-					pointHighlightStroke: pointHighlightStrokeColour,
-					data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()]
-				}
-				, {
-					label: "Lin",
-					fillColor: transparentColour,
-					strokeColor: randomColour(),
-					pointColor: randomColour(),
-					pointStrokeColor: whiteColour,
-					pointHighlightFill: whiteColour,
-					pointHighlightStroke: pointHighlightStrokeColour,
-					data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()]
-				}
-				, {
-					label: "Oat",
-					fillColor: transparentColour,
-					strokeColor: randomColour(),
-					pointColor: randomColour(),
-					pointStrokeColor: whiteColour,
-					pointHighlightFill: whiteColour,
-					pointHighlightStroke: pointHighlightStrokeColour,
-					data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()]
-				}
-				, {
-					label: "Nae",
-					fillColor: transparentColour,
-					strokeColor: randomColour(),
-					pointColor: randomColour(),
-					pointStrokeColor: whiteColour,
-					pointHighlightFill: whiteColour,
-					pointHighlightStroke: pointHighlightStrokeColour,
-					data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()]
-				}
-				, {
-					label: "Fern",
-					fillColor: transparentColour,
-					strokeColor: randomColour(),
-					pointColor: randomColour(),
-					pointStrokeColor: whiteColour,
-					pointHighlightFill: whiteColour,
-					pointHighlightStroke: pointHighlightStrokeColour,
-					data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()]
-				}
-				, {
-					label: "Nitin",
-					fillColor: transparentColour,
-					strokeColor: randomColour(),
-					pointColor: randomColour(),
-					pointStrokeColor: whiteColour,
-					pointHighlightFill: whiteColour,
-					pointHighlightStroke: pointHighlightStrokeColour,
-					data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()]
-				}
-			]
-
-		}
-
-		$(document).ready(function () {
-			new Chart(document.getElementById("canvas000").getContext("2d")).Line(lineChartData2, {
-				responsive: true,
-				tooltipFillColor: "rgba(51, 51, 51, 0.55)",
-				multiTooltipTemplate: "<%= datasetLabel %> - <%= value %>"
-			});
+	$(document).ready(function () {
+		new Chart(document.getElementById("canvas000").getContext("2d")).Line(lineChartData2, {
+			responsive: true,
+			tooltipFillColor: "rgba(51, 51, 51, 0.55)",
+			multiTooltipTemplate: "<%= datasetLabel %> - <%= value %>"
 		});
+	});
 	</script>
 
 	<!-- Bar graph -->

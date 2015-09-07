@@ -14,6 +14,12 @@
         {
 			var viewModel = new DashboardViewModel();
 
+			viewModel.Weeks.Add("Week 0");
+			viewModel.Weeks.Add("Week 1");
+			viewModel.Weeks.Add("Week 2");
+			viewModel.Weeks.Add("Week 3");
+			viewModel.Weeks.Add("Week 4");
+
 			var filePath = @"c:\dh.xlsx";
 
 			FileStream stream = System.IO.File.Open(filePath, FileMode.Open, FileAccess.Read);
@@ -40,6 +46,11 @@
 
 					competitor.Name = row[0].ToString();
 					competitor.Activities = int.Parse(row[row.ItemArray.Length - 1].ToString());
+
+					competitor.WeekActivities.Add(0);
+					competitor.WeekActivities.Add(competitor.Activities);
+					competitor.WeekActivities.Add((competitor.Activities + i));
+					competitor.WeekActivities.Add((competitor.Activities + i + i));
 
 					viewModel.Competitors.Add(competitor);
 				}

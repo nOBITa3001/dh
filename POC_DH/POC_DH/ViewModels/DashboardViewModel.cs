@@ -90,5 +90,12 @@
 		}
 
 		public List<CompetitorViewModel> Competitors { get; set; }
+
+		public List<string> Weeks { get; set; }
+
+		public DashboardViewModel()
+		{
+			this.Weeks = new List<string>();
+		}
 	}
 }
