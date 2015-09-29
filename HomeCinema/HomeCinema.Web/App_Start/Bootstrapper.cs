@@ -1,5 +1,6 @@
 ﻿namespace HomeCinema.Web
 {
+	using Mappings;
 	using System.Web.Http;
 
 	public class Bootstrapper
@@ -10,7 +11,7 @@
 			AutofacWebapiConfig.Initialize(GlobalConfiguration.Configuration);
 
 			//Configure AutoMapper
-			//AutoMapperConfiguration.Configure();
+			AutoMapperConfiguration.Configure();
 		}
 	}
 }
