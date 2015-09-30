@@ -90,5 +90,4 @@
 			$location.path('/login');
 		}
 	}
-
 })();

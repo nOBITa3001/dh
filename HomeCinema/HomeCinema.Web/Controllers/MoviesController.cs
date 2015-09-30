@@ -30,7 +30,8 @@
 		[Route("latest")]
 		public HttpResponseMessage Get(HttpRequestMessage request)
 		{
-			return CreateHttpResponse(request
+			return CreateHttpResponse(
+				request
 				, () =>
 				{
 					var movies = this.moviesRepository.GetAll().OrderByDescending(m => m.ReleaseDate).Take(6).ToList();

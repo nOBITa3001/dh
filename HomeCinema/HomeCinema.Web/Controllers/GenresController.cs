@@ -29,7 +29,8 @@
 		[AllowAnonymous]
 		public HttpResponseMessage Get(HttpRequestMessage request)
 		{
-			return CreateHttpResponse(request
+			return CreateHttpResponse(
+				request
 				, () =>
 				{
 					var genres = this.genresRepository.GetAll().ToList();

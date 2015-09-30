@@ -1,36 +1,32 @@
-﻿using FluentValidation;
-using HomeCinema.Web.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace HomeCinema.Web.Infrastructure.Validators
+﻿namespace HomeCinema.Web.Infrastructure.Validators
 {
-    public class RegistrationViewModelValidator : AbstractValidator<RegistrationViewModel>
-    {
-        public RegistrationViewModelValidator()
-        {
-            RuleFor(r => r.Email).NotEmpty().EmailAddress()
-                .WithMessage("Invalid email address");
+	using FluentValidation;
+	using Models;
 
-            RuleFor(r => r.Username).NotEmpty()
-                .WithMessage("Invalid username");
+	public class RegistrationViewModelValidator : AbstractValidator<RegistrationViewModel>
+	{
+		public RegistrationViewModelValidator()
+		{
+			this.RuleFor(r => r.Email).NotEmpty().EmailAddress()
+				.WithMessage("Invalid email address");
 
-            RuleFor(r => r.Password).NotEmpty()
-                .WithMessage("Invalid password");
-        }
-    }
+			this.RuleFor(r => r.Username).NotEmpty()
+				.WithMessage("Invalid username");
 
-    public class LoginViewModelValidator : AbstractValidator<LoginViewModel>
-    {
-        public LoginViewModelValidator()
-        {
-            RuleFor(r => r.Username).NotEmpty()
-                .WithMessage("Invalid username");
+			this.RuleFor(r => r.Password).NotEmpty()
+				.WithMessage("Invalid password");
+		}
+	}
 
-            RuleFor(r => r.Password).NotEmpty()
-                .WithMessage("Invalid password");
-        }
-    }
+	public class LoginViewModelValidator : AbstractValidator<LoginViewModel>
+	{
+		public LoginViewModelValidator()
+		{
+			this.RuleFor(r => r.Username).NotEmpty()
+				.WithMessage("Invalid username");
+
+			this.RuleFor(r => r.Password).NotEmpty()
+				.WithMessage("Invalid password");
+		}
+	}
 }
