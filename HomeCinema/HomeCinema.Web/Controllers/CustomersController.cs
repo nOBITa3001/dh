@@ -1,187 +1,185 @@
-﻿using AutoMapper;
-using HomeCinema.Data.Infrastructure;
-using HomeCinema.Data.Repositories;
-using HomeCinema.Entities;
-using HomeCinema.Web.Infrastructure.Core;
-using HomeCinema.Web.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Web.Http;
-using HomeCinema.Web.Infrastructure.Extensions;
-using HomeCinema.Data.Extensions;
-
-namespace HomeCinema.Web.Controllers
+﻿namespace HomeCinema.Web.Controllers
 {
-    [Authorize(Roles="Admin")]
-    [RoutePrefix("api/customers")]
-    public class CustomersController : ApiControllerBase
-    {
-        private readonly IEntityBaseRepository<Customer> _customersRepository;
+	using AutoMapper;
+	using Data.Extensions;
+	using Data.Infrastructure;
+	using Data.Repositories;
+	using Entities;
+	using Infrastructure.Core;
+	using Infrastructure.Extensions;
+	using Models;
+	using System;
+	using System.Collections.Generic;
+	using System.Linq;
+	using System.Net;
+	using System.Net.Http;
+	using System.Web.Http;
 
-        public CustomersController(IEntityBaseRepository<Customer> customersRepository, 
-            IEntityBaseRepository<Error> _errorsRepository, IUnitOfWork _unitOfWork)
-            : base(_errorsRepository, _unitOfWork)
-        {
-            _customersRepository = customersRepository;
-        }
+	[Authorize(Roles="Admin")]
+	[RoutePrefix("api/customers")]
+	public class CustomersController : ApiControllerBase
+	{
+		private readonly IEntityBaseRepository<Customer> customersRepository;
 
-        public HttpResponseMessage Get(HttpRequestMessage request, string filter)
-        {
-            filter = filter.ToLower().Trim();
+		public CustomersController(IEntityBaseRepository<Customer> customersRepository
+									, IEntityBaseRepository<Error> errorsRepository
+									, IUnitOfWork unitOfWork)
+			: base(errorsRepository, unitOfWork)
+		{
+			this.customersRepository = customersRepository;
+		}
 
-            return CreateHttpResponse(request, () =>
-            {
-                HttpResponseMessage response = null;
+		//public HttpResponseMessage Get(HttpRequestMessage request, string filter)
+		//{
+		//	filter = filter.ToLower().Trim();
 
-                var customers = _customersRepository.GetAll()
-                    .Where(c => c.Email.ToLower().Contains(filter) ||
-                    c.FirstName.ToLower().Contains(filter) ||
-                    c.LastName.ToLower().Contains(filter)).ToList();
+		//	return CreateHttpResponse(request, () =>
+		//	{
+		//		HttpResponseMessage response = null;
 
-                var customersVm = Mapper.Map<IEnumerable<Customer>, IEnumerable<CustomerViewModel>>(customers);
+		//		var customers = customersRepository.GetAll()
+		//			.Where(c => c.Email.ToLower().Contains(filter) ||
+		//			c.FirstName.ToLower().Contains(filter) ||
+		//			c.LastName.ToLower().Contains(filter)).ToList();
 
-                response = request.CreateResponse<IEnumerable<CustomerViewModel>>(HttpStatusCode.OK, customersVm);
+		//		var customersVm = Mapper.Map<IEnumerable<Customer>, IEnumerable<CustomerViewModel>>(customers);
 
-                return response;
-            });
-        }
+		//		response = request.CreateResponse<IEnumerable<CustomerViewModel>>(HttpStatusCode.OK, customersVm);
 
-        [Route("details/{id:int}")]
-        public HttpResponseMessage Get(HttpRequestMessage request, int id)
-        {
-            return CreateHttpResponse(request, () =>
-            {
-                HttpResponseMessage response = null;
-                var customer = _customersRepository.GetSingle(id);
+		//		return response;
+		//	});
+		//}
 
-                CustomerViewModel customerVm = Mapper.Map<Customer, CustomerViewModel>(customer);
+		//[Route("details/{id:int}")]
+		//public HttpResponseMessage Get(HttpRequestMessage request, int id)
+		//{
+		//	return CreateHttpResponse(request, () =>
+		//	{
+		//		HttpResponseMessage response = null;
+		//		var customer = customersRepository.GetSingle(id);
 
-                response = request.CreateResponse<CustomerViewModel>(HttpStatusCode.OK, customerVm);
+		//		CustomerViewModel customerVm = Mapper.Map<Customer, CustomerViewModel>(customer);
 
-                return response;
-            });
-        }
+		//		response = request.CreateResponse<CustomerViewModel>(HttpStatusCode.OK, customerVm);
 
-        [HttpPost]
-        [Route("register")]
-        public HttpResponseMessage Register(HttpRequestMessage request, CustomerViewModel customer)
-        {
-            return CreateHttpResponse(request, () =>
-            {
-                HttpResponseMessage response = null;
+		//		return response;
+		//	});
+		//}
 
-                if (!ModelState.IsValid)
-                {
-                    response = request.CreateResponse(HttpStatusCode.BadRequest,
-                        ModelState.Keys.SelectMany(k => ModelState[k].Errors)
-                              .Select(m => m.ErrorMessage).ToArray());
-                }
-                else
-                {
-                    if (_customersRepository.UserExists(customer.Email, customer.IdentityCard))
-                    {
-                        ModelState.AddModelError("Invalid user", "Email or Identity Card number already exists");
-                        response = request.CreateResponse(HttpStatusCode.BadRequest,
-                        ModelState.Keys.SelectMany(k => ModelState[k].Errors)
-                              .Select(m => m.ErrorMessage).ToArray());
-                    }
-                    else
-                    {
-                        Customer newCustomer = new Customer();
-                        newCustomer.UpdateCustomer(customer);
-                        _customersRepository.Add(newCustomer);
+		[HttpPost]
+		[Route("register")]
+		public HttpResponseMessage Register(HttpRequestMessage request, CustomerViewModel customer)
+		{
+			return CreateHttpResponse(
+				request
+				, () =>
+				{
+					var response = default(HttpResponseMessage);
 
-                        _unitOfWork.Commit();
+					if (!ModelState.IsValid)
+					{
+						response = request.CreateResponse(HttpStatusCode.BadRequest
+															, ModelState.Keys.SelectMany(k => ModelState[k].Errors).Select(m => m.ErrorMessage).ToArray());
+					}
+					else
+					{
+						if (this.customersRepository.UserExists(customer.Email, customer.IdentityCard))
+						{
+							ModelState.AddModelError("Invalid user", "Email or Identity Card number already exists");
+							response = request.CreateResponse(HttpStatusCode.BadRequest
+																, ModelState.Keys.SelectMany(k => ModelState[k].Errors).Select(m => m.ErrorMessage).ToArray());
+						}
+						else
+						{
+							var newCustomer = new Customer();
+							newCustomer.UpdateCustomer(customer);
+							customersRepository.Add(newCustomer);
 
-                        // Update view model
-                        customer = Mapper.Map<Customer, CustomerViewModel>(newCustomer);
-                        response = request.CreateResponse<CustomerViewModel>(HttpStatusCode.Created, customer);
-                    }
-                }
+							this.unitOfWork.Commit();
 
-                return response;
-            });
-        }
+							// Update view model
+							customer = Mapper.Map<Customer, CustomerViewModel>(newCustomer);
+							response = request.CreateResponse<CustomerViewModel>(HttpStatusCode.Created, customer);
+						}
+					}
 
-        [HttpPost]
-        [Route("update")]
-        public HttpResponseMessage Update(HttpRequestMessage request, CustomerViewModel customer)
-        {
-            return CreateHttpResponse(request, () =>
-            {
-                HttpResponseMessage response = null;
+					return response;
+				});
+		}
 
-                if (!ModelState.IsValid)
-                {
-                    response = request.CreateResponse(HttpStatusCode.BadRequest,
-                        ModelState.Keys.SelectMany(k => ModelState[k].Errors)
-                              .Select(m => m.ErrorMessage).ToArray());
-                }
-                else
-                {
-                    Customer _customer = _customersRepository.GetSingle(customer.ID);
-                    _customer.UpdateCustomer(customer);
+		[HttpPost]
+		[Route("update")]
+		public HttpResponseMessage Update(HttpRequestMessage request, CustomerViewModel customer)
+		{
+			return CreateHttpResponse(
+				request
+				, () =>
+				{
+					var response = default(HttpResponseMessage);
 
-                    _unitOfWork.Commit();
+					if (!ModelState.IsValid)
+					{
+						response = request.CreateResponse(HttpStatusCode.BadRequest
+															, ModelState.Keys.SelectMany(k => ModelState[k].Errors).Select(m => m.ErrorMessage).ToArray());
+					}
+					else
+					{
+						var _customer = this.customersRepository.GetSingle(customer.ID);
+						_customer.UpdateCustomer(customer);
 
-                    response = request.CreateResponse(HttpStatusCode.OK);
-                }
+						this.unitOfWork.Commit();
 
-                return response;
-            });
-        }
+						response = request.CreateResponse(HttpStatusCode.OK);
+					}
 
-        [HttpGet]
-        [Route("search/{page:int=0}/{pageSize=4}/{filter?}")]
-        public HttpResponseMessage Search(HttpRequestMessage request, int? page, int? pageSize, string filter = null)
-        {
-            int currentPage = page.Value;
-            int currentPageSize = pageSize.Value;
+					return response;
+				});
+		}
 
-            return CreateHttpResponse(request, () =>
-            {
-                HttpResponseMessage response = null;
-                List<Customer> customers = null;
-                int totalMovies = new int();
+		[HttpGet]
+		[Route("search/{page:int=0}/{pageSize=4}/{filter?}")]
+		public HttpResponseMessage Search(HttpRequestMessage request, int? page, int? pageSize, string filter = null)
+		{
+			return CreateHttpResponse(
+				request
+				, () =>
+				{
+					var customers = default(IEnumerable<Customer>);
 
-                if (!string.IsNullOrEmpty(filter))
-                {
-                    filter = filter.Trim().ToLower();
+					if (!string.IsNullOrWhiteSpace(filter))
+					{
+						filter = filter.Trim().ToLower();
 
-                    customers = _customersRepository.GetAll()
-                        .OrderBy(c => c.ID)
-                        .Where(c => c.LastName.ToLower().Contains(filter) ||
-                            c.IdentityCard.ToLower().Contains(filter) ||
-                            c.FirstName.ToLower().Contains(filter))
-                        .ToList();
-                }
-                else
-                {
-                    customers = _customersRepository.GetAll().ToList();
-                }
+						customers = this.customersRepository.GetAll()
+															.Where(c => c.LastName.ToLower().Contains(filter)
+																|| c.IdentityCard.ToLower().Contains(filter)
+																|| c.FirstName.ToLower().Contains(filter))
+															.OrderBy(c => c.ID);
+					}
+					else
+					{
+						customers = this.customersRepository.GetAll();
+					}
 
-                totalMovies = customers.Count();
-                customers = customers.Skip(currentPage * currentPageSize)
-                        .Take(currentPageSize)
-                        .ToList();
+					var currentPage = page.Value;
+					var currentPageSize = pageSize.Value;
+					var totalMovies = customers.Count();
 
-                IEnumerable<CustomerViewModel> customersVM = Mapper.Map<IEnumerable<Customer>, IEnumerable<CustomerViewModel>>(customers);
+					customers = customers.Skip(currentPage * currentPageSize)
+											.Take(currentPageSize);
 
-                PaginationSet<CustomerViewModel> pagedSet = new PaginationSet<CustomerViewModel>()
-                {
-                    Page = currentPage,
-                    TotalCount = totalMovies,
-                    TotalPages = (int)Math.Ceiling((decimal)totalMovies / currentPageSize),
-                    Items = customersVM
-                };
+					var customersVM = Mapper.Map<IEnumerable<Customer>, IEnumerable<CustomerViewModel>>(customers);
 
-                response = request.CreateResponse<PaginationSet<CustomerViewModel>>(HttpStatusCode.OK, pagedSet);
+					var pagedSet = new PaginationSet<CustomerViewModel>()
+					{
+						Page = currentPage,
+						TotalCount = totalMovies,
+						TotalPages = (int)Math.Ceiling((decimal)totalMovies / currentPageSize),
+						Items = customersVM
+					};
 
-                return response;
-            });
-        }
-    }
+					return request.CreateResponse(HttpStatusCode.OK, pagedSet);
+				});
+		}
+	}
 }
