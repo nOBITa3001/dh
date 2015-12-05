@@ -181,6 +181,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="assets\css\theme-colors\bcc-red.css" />
+    <Content Include="assets\img\Logo-white1.png" />
+    <Content Include="assets\img\sliders\revolution\bg4.jpg" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
