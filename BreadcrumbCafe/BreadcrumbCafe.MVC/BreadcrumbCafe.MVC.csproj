@@ -254,6 +254,10 @@
     <Content Include="assets\img\bg\Scale_Graphic_Design.png" />
     <Content Include="assets\img\bg\Scale_Mobile.png" />
     <Content Include="assets\img\bg\Scale_Website.png" />
+    <Content Include="assets\img\bg\slider-course.png" />
+    <Content Include="assets\img\bg\slider-graphic-design.png" />
+    <Content Include="assets\img\bg\slider-mobile-app.png" />
+    <Content Include="assets\img\bg\slider-web-app.png" />
     <Content Include="assets\img\breadcrumbs\img1.jpg" />
     <Content Include="assets\img\breadcrumbs\img2.jpg" />
     <Content Include="assets\img\breadcrumbs\img3.jpg" />
