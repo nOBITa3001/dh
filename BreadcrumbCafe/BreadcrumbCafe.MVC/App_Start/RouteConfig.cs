@@ -14,14 +14,14 @@ namespace BreadcrumbCafe.MVC
 			routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
 			routes.MapRoute(
-				name: "Default_WithoutAction",
-				url: "{controller}/{id}",
+				name: "Default",
+				url: "{controller}/{action}/{id}",
 				defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
 			);
 
 			routes.MapRoute(
-				name: "Default",
-				url: "{controller}/{action}/{id}",
+				name: "Default_WithoutAction",
+				url: "{controller}/{id}",
 				defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
 			);
 		}
