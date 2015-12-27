@@ -330,6 +330,7 @@
     <Content Include="assets\img\Logo-white1.png" />
     <Content Include="assets\img\logo.png" />
     <Content Include="assets\img\logo1-default.png" />
+    <Content Include="assets\img\logo-default.png" />
     <Content Include="assets\img\main\img1.jpg" />
     <Content Include="assets\img\main\img10.jpg" />
     <Content Include="assets\img\main\img11.jpg" />
@@ -854,6 +855,7 @@
     <Content Include="assets\plugins\wow\wow-ini.js" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="favicon.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
