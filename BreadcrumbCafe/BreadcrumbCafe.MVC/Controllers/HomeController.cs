@@ -18,6 +18,11 @@ namespace BreadcrumbCafe.MVC.Controllers
 			return View();
 		}
 
+		public ActionResult OldIndex()
+		{
+			return View();
+		}
+
 		public ActionResult About()
 		{
 			ViewBag.Message = "Your application description page.";
