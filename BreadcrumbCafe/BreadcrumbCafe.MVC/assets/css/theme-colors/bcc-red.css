@@ -142,9 +142,9 @@ i.icon-bg-u {
 
 /* Top Control
 ------------------------------------*/
-/*#topcontrol:hover {
+#topcontrol:hover {
   background-color: #a63f3f;
-}*/
+}
 
 .btn-u {
     background: #a63f3f;

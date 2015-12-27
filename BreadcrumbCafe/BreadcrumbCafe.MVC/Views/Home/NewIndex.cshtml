@@ -10,7 +10,7 @@
 <html lang="en">
  <!--<![endif]-->
 <head>
-	<title>Incredible | Unify - Responsive Website Template</title>
+	<title>BREADCRUMS CAFE | Home</title>
 	<!-- Meta -->
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -46,8 +46,8 @@
 	<!-- CSS Customization -->
 	<link rel="stylesheet" href="~/assets/css/custom.css">
 </head>
-<body class="header-fixed header-fixed-space">
-	<div class="wrapper">
+<body id="body" class="header-fixed header-fixed-space">
+	<section class="wrapper">
 		<!--=== Header v6 ===-->
 		<div class="header-v6 header-classic-white header-sticky">
 			<!-- Navbar -->
@@ -63,23 +63,15 @@
 						</button>
 						<!-- Navbar Brand -->
 						<div class="navbar-brand">
-							<a href="index.html">
+							<a href="#">
 								<img class="shrink-logo" src="~/assets/img/logo1-default.png" alt="Logo">
 							</a>
 						</div>
 						<!-- ENd Navbar Brand -->
+			
 						<!-- Header Inner Right -->
 						<div class="header-inner-right">
 							<ul class="menu-icons-list">
-								@*<li class="menu-icons shopping-cart">
-									<i class="menu-icons-style radius-x fa fa-shopping-cart"></i>
-									<span class="badge">0</span>
-									<div class="shopping-cart-open">
-										<span class="shc-title">No products in the Cart</span>
-										<button type="button" class="btn-u"><i class="fa fa-shopping-cart"></i> Cart</button>
-										<span class="shc-total">Total: <strong>$0.00</strong></span>
-									</div>
-								</li>*@
 								<li class="menu-icons">
 									<i class="menu-icons-style search search-close search-btn fa fa-search"></i>
 									<div class="search-open">
@@ -94,28 +86,43 @@
 					<div class="collapse navbar-collapse navbar-responsive-collapse">
 						<div class="menu-container">
 							<ul class="nav navbar-nav">
-								<!-- Home -->
-								<li class="dropdown active">
+								<li class="page-scroll home">
+									<a href="#intro">Home</a>
+								</li>
+								<li class="page-scroll">
+									<a href="#about">About Us</a>
+								</li>
+								<li class="page-scroll">
+									<a href="#news">News</a>
+								</li>
+								<li class="page-scroll">
+									<a href="#blog">Blog</a>
+								</li>
+								<li class="page-scroll">
+									<a href="#services">Our services</a>
+								</li>
+								<li class="page-scroll">
+									<a href="#portfolio">Portfolio</a>
+								</li>
+								<li class="page-scroll">
+									<a href="#contact">Contact</a>
+								</li>
+								@*<li class="dropdown active">
 									<a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
 										Home
 									</a>
 								</li>
-								<!-- End Home -->
-								<!-- Pages -->
 								<li class="dropdown">
 									<a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
 										About us
 									</a>
 								</li>
-								<!-- End Pages -->
 								<!-- Blog -->
 								<li class="dropdown">
 									<a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
 										News
 									</a>
 								</li>
-								<!-- End Blog -->
-								<!-- Portfolio -->
 								<li class="dropdown">
 									<a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
 										Blog
@@ -135,13 +142,11 @@
 										Portfolio
 									</a>
 								</li>
-								<!-- End Shortcodes -->
-								<!-- Misc Pages -->
 								<li class="dropdown">
 									<a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
 										Contact us
 									</a>
-								</li>
+								</li>*@
 								<!-- End Misc Pages -->
 							</ul>
 						</div>
@@ -152,7 +157,7 @@
 		</div>
 		<!--=== End Header v6 ===-->
 		<!--=== Slider ===-->
-		<div class="ms-layers-template">
+		<div id="intro" class="ms-layers-template">
 			<!-- masterslider -->
 			<div class="master-slider ms-skin-black-2 round-skin" id="masterslider">
 				<div class="ms-slide">
@@ -224,7 +229,8 @@
 		</div>*@
 		<!--=== End Call To Action ===-->
 		<!-- About Info -->
-		<div class="container content-md">
+		@*<div id="about" class="container content-md">*@
+		<section id="about" class="container content-md">
 			<div class="row">
 				<div class="col-md-6">
 					<h2 class="title-v2">WE ARE UNIFY</h2>
@@ -237,10 +243,10 @@
 					<img class="img-responsive" src="~/assets/img/mockup/SMUGG.png" alt="">
 				</div>
 			</div>
-		</div>
+		</section>
 		<!-- End About Info -->
 		<!--=== Testimonials v6 ===-->
-		<div class="bg-color-light">
+		<section id="news" class="bg-color-light">
 			<div class="container content-sm">
 				<div class="headline-center margin-bottom-60">
 					<h2>NEWS</h2>
@@ -273,7 +279,7 @@
 							</div>
 						</div>
 					</div><!--/end row-->
-					<div class="row margin-bottom-20">
+					@*<div class="row margin-bottom-20">
 						<div class="col-md-6 md-margin-bottom-50">
 							<div class="testimonials-info rounded-bottom">
 								<img class="rounded-x" src="~/assets/img/testimonials/img3.jpg" alt="">
@@ -294,14 +300,14 @@
 								</div>
 							</div>
 						</div>
-					</div><!--/end row-->
+					</div>*@<!--/end row-->
 				</div>
 				<!-- End Testimonials Wrap -->
 			</div><!--/end container-->
-		</div>
+		</section>
 		<!--=== End Testimonials v6 ===-->
 		<!-- Course Section -->
-		<section id="course" class="news-section" style="background-color:#404040;color:#fff;">
+		<section id="blog" class="news-section" style="background-color:#404040;color:#fff;">
 			<div class="container content-lg">
 				<div class="title-v1">
 					<h2 style="color:#fff;">News &amp; Articles</h2>
@@ -387,7 +393,7 @@
 			</div>*@
 		</section>
 		<!--=== Testimonials ===-->
-		<div class="testimonials-v3" style="background-color:#6ab9d9 !important;">
+		<section class="testimonials-v3" style="background-color:#6ab9d9 !important;">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2">
@@ -423,7 +429,7 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		</section>
 		<!--=== End Testimonials ===-->
 		<!--=== Parallax Quote ===-->
 		@*<div class="parallax-quote parallaxBg" style="background-position: 50% 22px;">
@@ -568,7 +574,7 @@
 			</div>
 
 
-			<ul class="list-unstyled row portfolio-box-v1">
+			<ul id="portfolio" class="list-unstyled row portfolio-box-v1">
 				<li class="col-sm-4">
 					<img class="img-responsive" src="~/assets/img/mockup/img1.jpg" alt="">
 					<div class="portfolio-box-v1-in">
@@ -943,7 +949,7 @@
 			</div>
 		</div>*@
 		<!--=== End Footer v6 ===-->
-	</div><!--/wrapper-->
+	</section><!--/wrapper-->
 	<!-- JS Global Compulsory -->
 	<script type="text/javascript" src="~/assets/plugins/jquery/jquery.min.js"></script>
 	<script type="text/javascript" src="~/assets/plugins/jquery/jquery-migrate.min.js"></script>
@@ -965,6 +971,7 @@
 	<script type="text/javascript" src="~/assets/js/plugins/fancy-box.js"></script>
 	<script type="text/javascript" src="~/assets/js/plugins/owl-carousel.js"></script>
 	<script type="text/javascript" src="~/assets/js/plugins/master-slider-fw.js"></script>
+	<script type="text/javascript" src="~/assets/js/plugins/revolution-slider.js"></script>
 	<script type="text/javascript">
     jQuery(document).ready(function() {
       	App.init();
