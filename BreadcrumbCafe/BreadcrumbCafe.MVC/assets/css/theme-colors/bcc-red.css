@@ -149,6 +149,17 @@ i.icon-bg-u {
 .btn-u {
     background: #a63f3f;
 }
+.btn-u:hover, 
+.btn-u:focus, 
+.btn-u:active, 
+.btn-u.active, 
+.open .dropdown-toggle.btn-u {
+   background: #b61332;
+}
+
+.btn-u-split.dropdown-toggle {
+   border-left: solid 1px #b61332;
+}
 i.icon-color-u {
     border: 1px solid #a63f3f;
     color: #a63f3f;
