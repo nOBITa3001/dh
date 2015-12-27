@@ -1,6 +1,6 @@
 ﻿
 @{
-    Layout = null;
+	Layout = null;
 }
 
 <!DOCTYPE html>
@@ -87,7 +87,7 @@
 						<div class="menu-container">
 							<ul class="nav navbar-nav">
 								<li class="page-scroll home">
-									<a href="#intro">Home</a>
+									<a href="#body">Home</a>
 								</li>
 								<li class="page-scroll">
 									<a href="#about">About Us</a>
@@ -107,47 +107,6 @@
 								<li class="page-scroll">
 									<a href="#contact">Contact</a>
 								</li>
-								@*<li class="dropdown active">
-									<a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
-										Home
-									</a>
-								</li>
-								<li class="dropdown">
-									<a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
-										About us
-									</a>
-								</li>
-								<!-- Blog -->
-								<li class="dropdown">
-									<a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
-										News
-									</a>
-								</li>
-								<li class="dropdown">
-									<a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
-										Blog
-									</a>
-								</li>
-								<!-- End Portfolio -->
-								<!-- Features -->
-								<li class="dropdown">
-									<a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
-										Our services
-									</a>
-								</li>
-								<!-- End Features -->
-								<!-- Shortcodes -->
-								<li class="dropdown mega-menu-fullwidth">
-									<a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
-										Portfolio
-									</a>
-								</li>
-								<li class="dropdown">
-									<a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
-										Contact us
-									</a>
-								</li>*@
-								<!-- End Misc Pages -->
 							</ul>
 						</div>
 					</div><!--/navbar-collapse-->
@@ -156,6 +115,7 @@
 			<!-- End Navbar -->
 		</div>
 		<!--=== End Header v6 ===-->
+
 		<!--=== Slider ===-->
 		<div id="intro" class="ms-layers-template">
 			<!-- masterslider -->
@@ -230,24 +190,27 @@
 		<!--=== End Call To Action ===-->
 		<!-- About Info -->
 		@*<div id="about" class="container content-md">*@
-		<section id="about" class="container content-md">
-			<div class="row">
-				<div class="col-md-6">
-					<h2 class="title-v2">WE ARE UNIFY</h2>
-					<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
-					<p>If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures.</p><br>
-					<a href="#" class="btn-u btn-brd btn-brd-hover btn-u-dark">Read More</a>
-					<a href="#" class="btn-u">View Our Work</a>
-				</div>
-				<div class="col-md-6">
-					<img class="img-responsive" src="~/assets/img/mockup/SMUGG.png" alt="">
-				</div>
+		@*<section id="about" class="container content-md">*@
+		<section id="about" class="about-section">
+			<div class="container content-lg">
+				@*<div class="row">*@
+					<div class="col-md-6">
+						<h2 class="title-v2">WE ARE UNIFY</h2>
+						<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
+						<p>If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures.</p><br>
+						<a href="#" class="btn-u btn-brd btn-brd-hover btn-u-dark">Read More</a>
+						<a href="#" class="btn-u">View Our Work</a>
+					</div>
+					<div class="col-md-6">
+						<img class="img-responsive" src="~/assets/img/mockup/SMUGG.png" alt="">
+					</div>
+				@*</div>*@
 			</div>
 		</section>
 		<!-- End About Info -->
 		<!--=== Testimonials v6 ===-->
 		<section id="news" class="bg-color-light">
-			<div class="container content-sm">
+			<div class="container content-lg">
 				<div class="headline-center margin-bottom-60">
 					<h2>NEWS</h2>
 					<p>
@@ -573,46 +536,48 @@
 				</div>
 			</div>
 
-
-			<ul id="portfolio" class="list-unstyled row portfolio-box-v1">
-				<li class="col-sm-4">
-					<img class="img-responsive" src="~/assets/img/mockup/img1.jpg" alt="">
-					<div class="portfolio-box-v1-in">
-						<h3>Collective Package</h3>
-						<p>Web Design, Mock-up</p>
-						<a class="btn-u btn-u-sm btn-brd btn-brd-hover btn-u-light" href="#">Read More</a>
-					</div>
-				</li>
-				<li class="col-sm-4">
-					<img class="img-responsive" src="~/assets/img/mockup/img2.jpg" alt="">
-					<div class="portfolio-box-v1-in">
-						<h3>Ahola Company</h3>
-						<p>Brand Design, UI</p>
-						<a class="btn-u btn-u-sm btn-brd btn-brd-hover btn-u-light" href="#">Read More</a>
-					</div>
-				</li>
-				<li class="col-sm-4">
-					<img class="img-responsive" src="~/assets/img/mockup/img4.jpg" alt="">
-					<div class="portfolio-box-v1-in">
-						<h3>Allan Project</h3>
-						<p>Web Development, HTML5</p>
-						<a class="btn-u btn-u-sm btn-brd btn-brd-hover btn-u-light" href="#">Read More</a>
-					</div>
-				</li>
-			</ul>
-
-			<div class="call-action-v1">
-				<div class="container">
-					<div class="call-action-v1-box">
-						<div class="call-action-v1-in">
-							<p>Breadcrumbs creative technology company providing key digital services and focused on helping our clients to build a successful business on web and mobile.</p>
+			@*<div id="portfolio" class="container content-lg">*@
+				<ul id="portfolio" class="list-unstyled row portfolio-box-v1" style="padding-top:70px;">
+					<li class="col-sm-4">
+						<img class="img-responsive" src="~/assets/img/mockup/img1.jpg" alt="">
+						<div class="portfolio-box-v1-in">
+							<h3>Collective Package</h3>
+							<p>Web Design, Mock-up</p>
+							<a class="btn-u btn-u-sm btn-brd btn-brd-hover btn-u-light" href="#">Read More</a>
 						</div>
-						<div class="call-action-v1-in inner-btn page-scroll">
-							<a href="#portfolio" class="btn-u btn-brd btn-brd-hover btn-u-dark btn-u-block">View Our Portfolio</a>
+					</li>
+					<li class="col-sm-4">
+						<img class="img-responsive" src="~/assets/img/mockup/img2.jpg" alt="">
+						<div class="portfolio-box-v1-in">
+							<h3>Ahola Company</h3>
+							<p>Brand Design, UI</p>
+							<a class="btn-u btn-u-sm btn-brd btn-brd-hover btn-u-light" href="#">Read More</a>
+						</div>
+					</li>
+					<li class="col-sm-4">
+						<img class="img-responsive" src="~/assets/img/mockup/img4.jpg" alt="">
+						<div class="portfolio-box-v1-in">
+							<h3>Allan Project</h3>
+							<p>Web Development, HTML5</p>
+							<a class="btn-u btn-u-sm btn-brd btn-brd-hover btn-u-light" href="#">Read More</a>
+						</div>
+					</li>
+				</ul>
+
+				<div class="call-action-v1">
+					<div class="container">
+						<div class="call-action-v1-box">
+							<div class="call-action-v1-in">
+								<p>Breadcrumbs creative technology company providing key digital services and focused on helping our clients to build a successful business on web and mobile.</p>
+							</div>
+							<div class="call-action-v1-in inner-btn page-scroll">
+								<a href="#portfolio" class="btn-u btn-brd btn-brd-hover btn-u-dark btn-u-block">View Our Portfolio</a>
+							</div>
 						</div>
 					</div>
 				</div>
-			</div>
+
+			@*</div>*@
 		</section>
 		<!-- End Services Section -->
 		<!--=== Carallax Counter v1 ===-->
@@ -958,8 +923,8 @@
 	<script type="text/javascript" src="~/assets/plugins/back-to-top.js"></script>
 	<script type="text/javascript" src="~/assets/plugins/smoothScroll.js"></script>
 	<script type="text/javascript" src="~/assets/plugins/jquery.parallax.js"></script>
-	<script src="~/assets/plugins/master-slider/masterslider/masterslider.min.js"></script>
-	<script src="~/assets/plugins/master-slider/masterslider/jquery.easing.min.js"></script>
+	<script type="text/javascript" src="~/assets/plugins/master-slider/masterslider/masterslider.min.js"></script>
+	<script type="text/javascript" src="~/assets/plugins/master-slider/masterslider/jquery.easing.min.js"></script>
 	<script type="text/javascript" src="~/assets/plugins/counter/waypoints.min.js"></script>
 	<script type="text/javascript" src="~/assets/plugins/counter/jquery.counterup.min.js"></script>
 	<script type="text/javascript" src="~/assets/plugins/fancybox/source/jquery.fancybox.pack.js"></script>
@@ -973,14 +938,14 @@
 	<script type="text/javascript" src="~/assets/js/plugins/master-slider-fw.js"></script>
 	<script type="text/javascript" src="~/assets/js/plugins/revolution-slider.js"></script>
 	<script type="text/javascript">
-    jQuery(document).ready(function() {
-      	App.init();
-        App.initCounter();
-        App.initParallaxBg();
-        FancyBox.initFancybox();
-        MSfullWidth.initMSfullWidth();
-        OwlCarousel.initOwlCarousel();
-    });
+	jQuery(document).ready(function() {
+		App.init();
+		App.initCounter();
+		App.initParallaxBg();
+		FancyBox.initFancybox();
+		MSfullWidth.initMSfullWidth();
+		OwlCarousel.initOwlCarousel();
+	});
 	</script>
 	<!--[if lt IE 9]>
 		<script src="~/assets/plugins/respond.js"></script>
