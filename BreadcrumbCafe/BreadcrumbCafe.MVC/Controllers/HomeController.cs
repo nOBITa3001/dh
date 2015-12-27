@@ -31,5 +31,10 @@ namespace BreadcrumbCafe.MVC.Controllers
 
 			return View();
 		}
+
+		public ActionResult ComingSoon()
+		{
+			return View();
+		}
 	}
 }

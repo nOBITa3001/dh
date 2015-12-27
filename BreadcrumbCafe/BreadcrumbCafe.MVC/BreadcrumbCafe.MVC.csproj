@@ -219,6 +219,7 @@
     <Content Include="assets\css\old-plugins.css" />
     <Content Include="assets\css\one-dark.style.css" />
     <Content Include="assets\css\one.style.css" />
+    <Content Include="assets\css\pages\page_coming_soon_v1.css" />
     <Content Include="assets\css\pages\page_one.css" />
     <Content Include="assets\css\pages\portfolio-v1.css" />
     <Content Include="assets\css\plugins.css" />
@@ -421,6 +422,7 @@
     <Content Include="assets\js\forms\contact.js" />
     <Content Include="assets\js\forms\login.js" />
     <Content Include="assets\js\one.app.js" />
+    <Content Include="assets\js\pages\page_coming_soon.js" />
     <Content Include="assets\js\plugins\cube-portfolio\cube-portfolio-4.js" />
     <Content Include="assets\js\plugins\cube-portfolio\cube-portfolio-lightbox.js" />
     <Content Include="assets\js\plugins\fancy-box.js" />
@@ -453,6 +455,8 @@
     <Content Include="assets\plugins\bootstrap\js\bootstrap.js" />
     <Content Include="assets\plugins\bootstrap\js\bootstrap.min.js" />
     <Content Include="assets\plugins\bootstrap\js\npm.js" />
+    <Content Include="assets\plugins\countdown\jquery.countdown.js" />
+    <Content Include="assets\plugins\countdown\jquery.plugin.js" />
     <Content Include="assets\plugins\counter\counterup.jquery.json" />
     <Content Include="assets\plugins\counter\demo\demo.html" />
     <Content Include="assets\plugins\counter\jquery.counterup.js" />
@@ -916,6 +920,7 @@
     <Content Include="Views\Portfolio\Index.cshtml" />
     <Content Include="Views\Home\Index - Copy %282%29.cshtml" />
     <Content Include="Views\Home\NewIndex.cshtml" />
+    <Content Include="Views\Home\ComingSoon.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
