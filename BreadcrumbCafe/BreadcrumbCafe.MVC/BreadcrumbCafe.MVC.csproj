@@ -436,7 +436,6 @@
     <Content Include="assets\js\plugins\revolution-slider.js" />
     <Content Include="assets\js\plugins\style-switcher-rtl.js" />
     <Content Include="assets\js\plugins\style-switcher.js" />
-    <Content Include="assets\Logo 200x39.png" />
     <Content Include="assets\php\sky-forms-pro\demo-contacts-process.php" />
     <Content Include="assets\plugins\animate.css" />
     <Content Include="assets\plugins\back-to-top.js" />

@@ -505,7 +505,7 @@
 	.header-v6 .navbar-nav > .active > a:hover,
 	.header-v6 .navbar-nav > .active > a:focus {
 		background: inherit;
-		color: #72c02c !important;	
+		color: #a63f3f !important;	
 	}
 
 	.header-v6 .dropdown .dropdown-submenu > a { 
