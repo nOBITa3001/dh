@@ -425,6 +425,8 @@
     <Content Include="assets\img\team\pongsakornth.jpg" />
     <Content Include="assets\img\team\siyaratk.jpg" />
     <Content Include="assets\img\team\TM.png" />
+    <Content Include="assets\img\testimonials\icon-glasses.png" />
+    <Content Include="assets\img\testimonials\icon-greeting.png" />
     <Content Include="assets\img\testimonials\img1.jpg" />
     <Content Include="assets\img\testimonials\img2.jpg" />
     <Content Include="assets\img\testimonials\img3.jpg" />
@@ -432,7 +434,6 @@
     <Content Include="assets\img\testimonials\img5.jpg" />
     <Content Include="assets\img\testimonials\img6.jpg" />
     <Content Include="assets\img\testimonials\img7.jpg" />
-    <Content Include="assets\img\testimonials\Logo_Square.png" />
     <Content Include="assets\img\testimonials\user.jpg" />
     <Content Include="assets\js\app.js" />
     <Content Include="assets\js\custom.js" />
