@@ -3863,3 +3863,6 @@ img.img-center,
    -ms-transform: scale(2) rotate(5deg);
    transform: scale(2) rotate(5deg);
 }
+.cube-portfolio #filters-container {
+  text-align: center;
+}

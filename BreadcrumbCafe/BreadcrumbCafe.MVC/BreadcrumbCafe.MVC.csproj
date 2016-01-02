@@ -184,6 +184,7 @@
   <ItemGroup>
     <Content Include="assets\ajax\loadMore.html" />
     <Content Include="assets\ajax\loadMoreCourse.html" />
+    <Content Include="assets\ajax\loadMorePortfolio.html" />
     <Content Include="assets\ajax\project1.html" />
     <Content Include="assets\ajax\project10.html" />
     <Content Include="assets\ajax\project11.html" />
@@ -379,6 +380,8 @@
     <Content Include="assets\img\mockup\PF4.png" />
     <Content Include="assets\img\mockup\PF5.png" />
     <Content Include="assets\img\mockup\PF6.png" />
+    <Content Include="assets\img\mockup\PF7.png" />
+    <Content Include="assets\img\mockup\PF8.png" />
     <Content Include="assets\img\mockup\Poster2.png" />
     <Content Include="assets\img\mockup\SMUGG.png" />
     <Content Include="assets\img\mockup\Smuggs.png" />
@@ -404,6 +407,14 @@
     <Content Include="assets\img\portfolio\7.jpg" />
     <Content Include="assets\img\portfolio\8.jpg" />
     <Content Include="assets\img\portfolio\9.jpg" />
+    <Content Include="assets\img\portfolio\PF1.png" />
+    <Content Include="assets\img\portfolio\PF2.png" />
+    <Content Include="assets\img\portfolio\PF3.png" />
+    <Content Include="assets\img\portfolio\PF4.png" />
+    <Content Include="assets\img\portfolio\PF5.png" />
+    <Content Include="assets\img\portfolio\PF6.png" />
+    <Content Include="assets\img\portfolio\PF7.png" />
+    <Content Include="assets\img\portfolio\PF8.png" />
     <Content Include="assets\img\sliders\revolution\bg1.jpg" />
     <Content Include="assets\img\sliders\revolution\bg2.jpg" />
     <Content Include="assets\img\sliders\revolution\bg3.jpg" />
