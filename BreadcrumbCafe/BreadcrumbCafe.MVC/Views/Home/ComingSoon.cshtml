@@ -48,22 +48,24 @@
 	<!-- CSS Theme -->
 	@*<link rel="stylesheet" href="~/assets/css/theme-colors/bcc-red.css" id="style_color">*@
 </head>
-<body class="coming-soon-page">
-	<div class="coming-soon-bg-cover"></div>
+<body class="coming-soon-page" style="background-color:white;">
+	@*<div class="coming-soon-bg-cover"></div>*@
 	<!--=== Content Part ===-->
 	<div class="container cooming-soon-content">
 		<!-- Coming Soon Content -->
 		<div class="row">
 			<div class="col-md-12 coming-soon">
-				<h1>Hi, we're <span class="color-bcc-red">breadcrumbs café</span></h1>
-				<h2 class="test-info">Page is Coming Soon!</h2><br>
-				<h3 class="test-info1">Graphic Design / Web Application / Mobile Application / .NET Courses</h3>
+				@*<h1>Hi, we're <span class="color-bcc-red">breadcrumbs café</span></h1>
+				<h2 class="test-info">Page is Coming Soon!</h2><br>*@
+				<img src="~/assets/img/bg/Coming soon.png" />
+				<h3 class="test-info1" style="color:#555;">Graphic Design / Web Application / Mobile Application / .NET Courses</h3>
 				<!-- Coming Soon Plugn -->
 				<div class="coming-soon-plugin">
-					<div id="defaultCountdown"></div>
+					<div id="defaultCountdown" style="color:#555 !important;"></div>
 				</div>
 				<!-- End Coming Soon Plugn -->
-				<a class="btn-u btn-brd btn-brd-hover btn-u-light" href="/">Back to Home</a>
+				@*<a class="btn-u btn-brd btn-brd-hover btn-u-light" href="/">Back to Home</a>*@
+				<a class="btn-u btn-u-dark" href="/">Back to Home</a>
 			</div>
 		</div>
 	</div><!--/container-->
@@ -113,16 +115,16 @@
 	<!-- Background Slider (Backstretch) -->
 	<script>
 	//TODO: Use bg without text
-	$.backstretch([
-	  "/assets/img/bg/1600_Vanilla_Home.png"
-	  , "/assets/img/bg/slider-graphic-design-narrow.png"
-	  , "/assets/img/bg/slider-web-app-narrow.png"
-	  , "/assets/img/bg/slider-mobile-app-narrow.png"
-	  , "/assets/img/bg/slider-course-narrow.png"
-	  ], {
-		fade: 1000,
-		duration: 7000
-	});
+	//$.backstretch([
+	//  "/assets/img/bg/1600_Vanilla_Home.png"
+	//  , "/assets/img/bg/slider-graphic-design-narrow.png"
+	//  , "/assets/img/bg/slider-web-app-narrow.png"
+	//  , "/assets/img/bg/slider-mobile-app-narrow.png"
+	//  , "/assets/img/bg/slider-course-narrow.png"
+	//  ], {
+	//	fade: 1000,
+	//	duration: 7000
+	//});
 	</script>
 	<!--[if lt IE 9]>
 		<script src="~/assets/plugins/respond.js"></script>

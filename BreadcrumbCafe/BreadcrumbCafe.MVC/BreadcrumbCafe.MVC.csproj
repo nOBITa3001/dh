@@ -250,6 +250,7 @@
     <Content Include="assets\img\bg\19.jpg" />
     <Content Include="assets\img\bg\3.jpg" />
     <Content Include="assets\img\bg\7.jpg" />
+    <Content Include="assets\img\bg\Coming soon.png" />
     <Content Include="assets\img\bg\img1.jpg" />
     <Content Include="assets\img\bg\img2.jpg" />
     <Content Include="assets\img\bg\img3.jpg" />
@@ -291,6 +292,9 @@
     <Content Include="assets\img\clients\much-more.png" />
     <Content Include="assets\img\clients\national-geographic.png" />
     <Content Include="assets\img\clients\ucweb.png" />
+    <Content Include="assets\img\contents\Blog1.png" />
+    <Content Include="assets\img\contents\Blog2.png" />
+    <Content Include="assets\img\contents\Blog3.png" />
     <Content Include="assets\img\contents\img1.jpg" />
     <Content Include="assets\img\contents\img3.jpg" />
     <Content Include="assets\img\contents\img4.jpg" />
@@ -361,6 +365,7 @@
     <Content Include="assets\img\map-img-v1.png" />
     <Content Include="assets\img\map-img.png" />
     <Content Include="assets\img\marker.png" />
+    <Content Include="assets\img\mockup\CrossFit_Bangkok_logo.png" />
     <Content Include="assets\img\mockup\hand-black-iphone-l.png" />
     <Content Include="assets\img\mockup\img1.jpg" />
     <Content Include="assets\img\mockup\img2.jpg" />
@@ -368,6 +373,13 @@
     <Content Include="assets\img\mockup\mockup.png" />
     <Content Include="assets\img\mockup\mockup1.png" />
     <Content Include="assets\img\mockup\mockup2.png" />
+    <Content Include="assets\img\mockup\PF1.png" />
+    <Content Include="assets\img\mockup\PF2.png" />
+    <Content Include="assets\img\mockup\PF3.png" />
+    <Content Include="assets\img\mockup\PF4.png" />
+    <Content Include="assets\img\mockup\PF5.png" />
+    <Content Include="assets\img\mockup\PF6.png" />
+    <Content Include="assets\img\mockup\Poster2.png" />
     <Content Include="assets\img\mockup\SMUGG.png" />
     <Content Include="assets\img\mockup\Smuggs.png" />
     <Content Include="assets\img\mockup\Square_SMUGG.png" />
@@ -412,6 +424,7 @@
     <Content Include="assets\img\team\north.jpg" />
     <Content Include="assets\img\team\pongsakornth.jpg" />
     <Content Include="assets\img\team\siyaratk.jpg" />
+    <Content Include="assets\img\team\TM.png" />
     <Content Include="assets\img\testimonials\img1.jpg" />
     <Content Include="assets\img\testimonials\img2.jpg" />
     <Content Include="assets\img\testimonials\img3.jpg" />
@@ -419,6 +432,7 @@
     <Content Include="assets\img\testimonials\img5.jpg" />
     <Content Include="assets\img\testimonials\img6.jpg" />
     <Content Include="assets\img\testimonials\img7.jpg" />
+    <Content Include="assets\img\testimonials\Logo_Square.png" />
     <Content Include="assets\img\testimonials\user.jpg" />
     <Content Include="assets\js\app.js" />
     <Content Include="assets\js\custom.js" />
