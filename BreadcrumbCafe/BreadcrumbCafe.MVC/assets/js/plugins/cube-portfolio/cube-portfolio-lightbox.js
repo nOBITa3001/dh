@@ -155,7 +155,8 @@
 
         // set loading status
         oMsg = me.text();
-        me.text('LOADING...');
+    	//me.text('LOADING...');
+        me.text('loading...');
 
         // perform ajax request
         $.ajax({
@@ -181,7 +182,8 @@
                     });
 
                     if (itemsNext.length === 0) {
-                        me.text('NO MORE WORKS');
+                    	//me.text('NO MORE WORKS');
+                    	me.text('no more works');
                         me.addClass('cbp-l-loadMore-button-stop');
                     }
 
