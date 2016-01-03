@@ -415,6 +415,14 @@
     <Content Include="assets\img\portfolio\PF6.png" />
     <Content Include="assets\img\portfolio\PF7.png" />
     <Content Include="assets\img\portfolio\PF8.png" />
+    <Content Include="assets\img\portfolio\thumbnail-pf1.png" />
+    <Content Include="assets\img\portfolio\thumbnail-pf2.png" />
+    <Content Include="assets\img\portfolio\thumbnail-pf3.png" />
+    <Content Include="assets\img\portfolio\thumbnail-pf4.png" />
+    <Content Include="assets\img\portfolio\thumbnail-pf5.png" />
+    <Content Include="assets\img\portfolio\thumbnail-pf6.png" />
+    <Content Include="assets\img\portfolio\thumbnail-pf7.png" />
+    <Content Include="assets\img\portfolio\thumbnail-pf8.png" />
     <Content Include="assets\img\sliders\revolution\bg1.jpg" />
     <Content Include="assets\img\sliders\revolution\bg2.jpg" />
     <Content Include="assets\img\sliders\revolution\bg3.jpg" />
